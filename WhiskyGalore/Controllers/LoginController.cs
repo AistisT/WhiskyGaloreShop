@@ -23,7 +23,7 @@ namespace WhiskyGalore.Controllers
         // POST: /Login
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Login(User user)
+        public ActionResult Index(User user)
         {
             if (ModelState.IsValid)
             {

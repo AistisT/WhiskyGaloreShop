@@ -9,7 +9,7 @@
 <div class="col-md-4 register_account centre-div">
     <h4 class="title text-center">Login to your Account</h4>
 
-    @using (Html.BeginForm("Login", "Login", FormMethod.Post))
+    @using (Html.BeginForm("Index", "Login", FormMethod.Post))
     {
         <div class="validation-summary-errors">
             @Html.ValidationSummary(true)
