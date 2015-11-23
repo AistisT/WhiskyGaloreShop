@@ -1,0 +1,118 @@
+﻿@model WhiskyGalore.Models.Payment
+
+@{
+    ViewBag.Title = "Update Payment Details";
+}
+
+<div class="register_account">
+
+    <h4 class="title">Update Payment Details</h4>
+
+    @using (Html.BeginForm("UpdatePayment", "Details", FormMethod.Post))
+    {
+
+        <div class="row">
+            <div class="col-lg-12">
+
+
+                <div class="col-lg-6">
+                    @Html.AntiForgeryToken()
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.cardType, new { @class = "control-label col-lg-4" })
+                        @Html.EnumDropDownListFor(model => model.cardType)
+                        <div>
+                            @Html.ValidationMessageFor(model => model.cardType, String.Empty, new { @style = "color:red;!important" })
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.cardForename, new { @class = "control-label col-lg-4" })
+                        @Html.EditorFor(model => model.cardForename, new { @class = "form-control col-lg-5" })
+                        <div>
+                            @Html.ValidationMessageFor(model => model.cardForename, String.Empty, new { @style = "color:red;!important" })
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.cardSurname, new { @class = "control-label col-lg-4" })
+                        @Html.EditorFor(model => model.cardSurname, new { @class = "form-control col-lg-5" })
+                        <div>
+                            @Html.ValidationMessageFor(model => model.cardSurname, String.Empty, new { @style = "color:red;!important" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.cardNo, new { @class = "control-label col-lg-4" })
+                        @Html.EditorFor(model => model.cardNo, new { @class = "form-control col-lg-5" })
+                        <div>
+                            @Html.ValidationMessageFor(model => model.cardNo, String.Empty, new { @style = "color:red;!important" })
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.issueNo, new { @class = "control-label col-lg-4" })
+                        @Html.EditorFor(model => model.issueNo, new { @class = "form-control col-lg-5" })
+                        @Html.ValidationMessageFor(model => model.issueNo, String.Empty, new { @style = "color:red;!important" })
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.startDate, new { @class = "control-label col-lg-4" })
+                        @Html.TextBoxFor(model => model.startDate, new { type = "date" })
+                        @Html.ValidationMessageFor(model => model.startDate, String.Empty, new { @style = "color:red;!important" })
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.endDate, new { @class = "control-label col-lg-4" })
+                        @Html.TextBoxFor(model => model.endDate, new { type = "date" })
+                        @Html.ValidationMessageFor(model => model.endDate, String.Empty, new { @style = "color:red;!important" })
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.firstLine, new { @class = "control-label col-lg-4" })
+                        @Html.EditorFor(model => model.firstLine, new { @class = "form-control col-lg-5" })
+                        <div>
+                            @Html.ValidationMessageFor(model => model.firstLine, String.Empty, new { @style = "color:red;!important" })
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.secondLine, new { @class = "control-label col-lg-5" })
+                        @Html.EditorFor(model => model.secondLine, new { @class = "form-control col-lg-5" })
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.town, new { @class = "control-label col-lg-4" })
+                        @Html.EditorFor(model => model.town, new { @class = "form-control col-lg-5" })
+                        <div>
+                            @Html.ValidationMessageFor(model => model.town, String.Empty, new { @style = "color:red;!important" })
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.postcode, new { @class = "control-label col-lg-4" })
+                        @Html.EditorFor(model => model.postcode, new { @class = "form-control col-lg-5" })
+                        <div>
+                            @Html.ValidationMessageFor(model => model.postcode, String.Empty, new { @style = "color:red;!important" })
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.region, new { @class = "control-label col-lg-4" })
+                        @Html.EditorFor(model => model.region, new { @class = "form-control col-lg-5" })
+                        <div>
+                            @Html.ValidationMessageFor(model => model.region, String.Empty, new { @style = "color:red;!important" })
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.country, new { @class = "control-label col-lg-4" })
+                        @Html.EditorFor(model => model.country, new { @class = "form-control col-lg-5" })
+                        <div>
+                            @Html.ValidationMessageFor(model => model.country, String.Empty, new { @style = "color:red;!important" })
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-lg-offset-1">
+                        <button type="submit" class="btn grey btn-default">Submit</button>
+                        
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    }
+</div>
+
+

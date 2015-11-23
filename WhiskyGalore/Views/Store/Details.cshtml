@@ -1,0 +1,49 @@
+﻿@model WhiskyGalore.Models.Product
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<div class="cont span_2_of_3">
+    <div class="grid images_3_of_2">
+        <img src="@Url.Content(Model.picUrl)" alt="" />
+        <div class="clearfix"></div>
+    </div>
+    <div class="desc1 span_3_of_2">
+        <h3 class="m_5">@Model.productName</h3>
+        <p class="m_3">£@Model.unitPrice <span class="reducedfrom">reduced from £@Model.mrrp</span></p>
+        @{
+                if (Model.unitsInStock < 11)
+             {
+                 <p class="m_3">Only @Model.unitsInStock left in stock</p>
+             }
+
+                if (Model.wholesale)
+                {
+                    <p class="m_3">Contains @Model.quantityPerUnit per pack</p>
+                }
+}
+        </div>
+        <br>
+       
+           @using (Html.BeginForm("AddToCart", "Cart", new { productId = Model.productID, unitPrice = Model.unitPrice, productName = Model.productName, productWeight = Model.unitWeight },  FormMethod.Post, null))
+           {
+            <div class="btn_form">
+                <button type="submit" class="btn grey btn-default">Add To Cart</button>
+            </div>
+           }
+   </br>
+    </br>
+    <br />
+    <div class="toogle">
+        <h3 class="m_3">Product Details</h3>
+        <p class="m_text">@Model.productDescription</p>
+
+    </div>
+       
+
+    </div>
+    <div class="clear"></div>
+
+    
+

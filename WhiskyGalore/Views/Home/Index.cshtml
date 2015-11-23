@@ -1,0 +1,99 @@
+﻿@model WhiskyGalore.Models.Category
+@{
+    ViewBag.Title = "Whisky Galore";
+}
+<div class="main">
+                <h2 class="head">Featured Products</h2>
+    <div class="top-box">
+        @{
+
+            if (Model.dtfea.Rows.Count < 2)
+            {
+                <div class="col-lg-5 col-lg-offset-4 register_account height-fix-2">
+                    <p class="m_3 text-center">Sorry, we currently have no featured products  :-(</p>
+                </div>
+            }
+            else
+            {
+                for (int i = 0; i < 3; i++)
+                {
+
+                    <div class="span_1_of_3 col_1_of_3">
+                        <a href="@Url.Action("Details", "Store", new { productId = Model.dtfea.Rows[i]["productId"]})">
+                           
+                                <div class="inner_content clearfix">
+                                    <div class="product_image">
+                                        <img class="img-responsive" src="@Url.Content(Model.dtfea.Rows[i]["picUrl"].ToString())" alt="" />
+
+                                    </div>
+                                <div class="price">
+                                    <div class="cart-left">
+                                        <p class="title">@Model.dtfea.Rows[i]["productName"]</p>
+                                        <div class="price1">
+                                            <span class="actual">£@Model.dtfea.Rows[i]["unitPrice"]</span>
+                                        </div>
+                                    </div>
+                                    <div class="cart-right"> </div>
+                                    <div class="clear"></div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                }
+            }
+        }
+    </div>
+                    <div class="clear"></div>
+               
+
+
+                <h2 class="head">Staff Pick</h2>
+    <div class="top-box1">
+        @{
+
+            if (Model.dtstaff.Rows.Count < 2)
+            {
+                <div class="col-lg-5 col-lg-offset-4 register_account height-fix-2">
+                    <p class="m_3 text-center">Sorry, we currently have no staff favourites :-(</p>
+                </div>
+            }
+            else
+            {
+                for (int i = 0; i < 3; i++)
+                {
+
+                    <div class="span_1_of_3 col_1_of_3">
+                        <a href="@Url.Action("Details", "Store", new { productId = Model.dtstaff.Rows[i]["productId"]})">
+
+                            <div class="inner_content clearfix">
+                                <div class="product_image">
+                                    <img class="img-responsive" src="@Url.Content(Model.dtstaff.Rows[i]["picUrl"].ToString())" alt="" />
+
+                                </div>
+                                <div class="price">
+                                    <div class="cart-left">
+                                        <p class="title">@Model.dtstaff.Rows[i]["productName"]</p>
+                                        <div class="price1">
+                                            <span class="actual">£@Model.dtstaff.Rows[i]["unitPrice"]</span>
+                                        </div>
+                                    </div>
+                                    <div class="cart-right"> </div>
+                                    <div class="clear"></div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                }
+            }
+        }
+    </div>
+    <div class="clear"></div>
+
+            </div>
+       
+        
+        <div class="clear"></div>
+   
+	

@@ -1,0 +1,36 @@
+﻿@model WhiskyGalore.Models.Category
+
+@{
+    ViewBag.Title = "Store";
+}
+<h3>Browse Categories</h3>
+<div class="top-box">
+
+    @{
+        for (int i = 0; i < @Model.dtc.Rows.Count; i++)
+        {
+            <div class="span_1_of_3 col_1_of_3">
+                <a href="@Url.Action("Browse", new { categoryId = Model.dtc.Rows[i]["categoryId"]})">
+                    <div class="inner_content clearfix">
+                        <div class="product_image">
+                            <img class="img-responsive" src="@Url.Content(Model.dtc.Rows[i]["picUrl"].ToString())" alt="" />
+
+                        </div>
+                        <div class="price">
+                            <div class="cart-left">
+                                <p class="title">@(Model.dtc.Rows[i]["categoryName"])</p>
+                                <div class="price1">
+                                    <span class="actual">@(Model.dtc.Rows[i]["catDescription"])</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        }
+    }
+
+</div>          
+                
+
+

@@ -1,0 +1,47 @@
+﻿@model WhiskyGalore.Models.Category
+
+@{
+    ViewBag.Title = "Search Results";
+}
+
+<h3 class="m_3">Your Search Results: @Model.categoryName</h3>
+
+@{
+
+    if (Model.dts.Rows.Count == 0)
+    {
+        <div class="col-lg-5 col-lg-offset-4 register_account height-fix-2">
+            <p class="m_3 text-center">Sorry, your search returned no products  :-(</p>
+        </div>
+    }
+    else
+    {
+        for (int i = 0; i < Model.dts.Rows.Count; i++)
+        {
+
+            <div class="span_1_of_3 col_1_of_3 col-lg-3 col-lg-offset-1 bottom-fix">
+                <a href="@Url.Action("Details", "Store", new { productId = Model.dts.Rows[i]["productId"]})">
+                    <div class="product_image">
+                        <div class="inner_content clearfix">
+                            <div class="ultra-fix">
+                                <img class="img-responsive" src="@Url.Content(Model.dts.Rows[i]["picUrl"].ToString())" alt="" />
+                            </div>
+                        </div>
+                        <div class="price">
+                            <div class="cart-left">
+                                <p class="title">@Model.dts.Rows[i]["productName"]</p>
+                                <div class="price1">
+                                    <span class="actual">£@Model.dts.Rows[i]["unitPrice"]</span>
+                                </div>
+                            </div>
+                            <div class="cart-right"> </div>
+                            <div class="clear"></div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+        }
+    }
+}
+

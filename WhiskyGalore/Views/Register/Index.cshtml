@@ -1,0 +1,41 @@
+﻿@model WhiskyGalore.Models.User
+@{
+    ViewBag.Title = "Register";
+}
+
+<div class="col-md-4"></div>
+
+<div class="register_account col-md-4 centre-div">
+    
+        <h4 class="title text-center">Register an Account</h4>
+       
+
+        @using (Html.BeginForm("Register", "Register", FormMethod.Post))
+        {
+            @Html.AntiForgeryToken()
+            <div class="form-group">
+                @Html.LabelFor(model => model.username, new { @class = "control-label" })
+                @Html.EditorFor(model => model.username, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.username, String.Empty, new { @style = "color:red;!important" })
+
+
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(model => model.password, new { @class = "control-label" })
+                @Html.PasswordFor(model => model.password, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.password, String.Empty, new { @style = "color:red;!important" })
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.accountType, new { @class = "control-label" })
+                @Html.EnumDropDownListFor(model => model.accountType)
+                @Html.ValidationMessageFor(model => model.accountType, String.Empty, new { @style = "color:red;!important" })
+            </div>
+            <div class="form-group">
+            <button type="submit" class="btn  grey btn-default">Register</button>
+            </div>
+        }
+    </div>
+
+
+

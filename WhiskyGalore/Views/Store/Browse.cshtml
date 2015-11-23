@@ -1,0 +1,56 @@
+﻿@model WhiskyGalore.Models.Category
+
+@{
+    ViewBag.Title = "Browse";
+}
+
+    <h3 class="m_3">Browsing Category: @Model.categoryName</h3>
+<div class="top-box1">
+    @{
+
+        if (Model.dtp.Rows.Count == 0)
+        {
+            <div class="col-lg-5 col-lg-offset-4 register_account height-fix-2">
+                <p class="m_3 text-center">Sorry, we currently have no products in this category  :-(</p>
+            </div>
+        }
+        else
+        {
+            for (int i = 0; i < Model.dtp.Rows.Count; i++)
+            {
+
+                <div class="span_1_of_3 col_1_of_3">
+                    <a href="@Url.Action("Details", new { productId = Model.dtp.Rows[i]["productId"]})">
+                        <div class="inner_content clearfix">
+                            <div class="product_image">
+
+                                <img class="img-responsive" src="@Url.Content(Model.dtp.Rows[i]["picUrl"].ToString())" alt="" />
+
+                            </div>
+                            <div class="price">
+                                <div class="cart-left">
+                                    <p class="title">@Model.dtp.Rows[i]["productName"]</p>
+                                    <div class="price1">
+                                        <span class="actual">£@Model.dtp.Rows[i]["unitPrice"]</span>
+                                    </div>
+                                </div>
+                                <div class="cart-right"> </div>
+                                <div class="clear"></div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+            }
+        }
+    }
+
+
+    </div>
+
+
+
+
+
+
+
