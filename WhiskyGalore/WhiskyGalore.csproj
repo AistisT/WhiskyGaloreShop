@@ -364,13 +364,18 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Images\Test_Images\AmericanWhiskey.jpg" />
+    <Content Include="Images\Test_Images\Bells.jpg" />
+    <Content Include="Images\Test_Images\Bushmills.jpg" />
     <Content Include="Images\Test_Images\cart.psd" />
     <Content Include="Images\Test_Images\cart2.psd" />
     <Content Include="Images\Test_Images\FamousGrouse.jpg" />
     <Content Include="Images\Test_Images\FamousGrouse.png" />
+    <Content Include="Images\Test_Images\Feckin.jpg" />
+    <Content Include="Images\Test_Images\FightingCock.jpg" />
     <Content Include="Images\Test_Images\img-sprite.psd" />
     <Content Include="Images\Test_Images\IrishWhiskey.jpg" />
     <Content Include="Images\Test_Images\JackDaniels.jpg" />
+    <Content Include="Images\Test_Images\Jameson.jpg" />
     <Content Include="Images\Test_Images\JimBeam.jpg" />
     <Content Include="Images\Test_Images\logo.psd" />
     <Content Include="Images\Test_Images\2.png" />
@@ -406,6 +411,7 @@
     <Content Include="Images\Test_Images\t-2.jpg" />
     <Content Include="Images\Test_Images\t-3.jpg" />
     <Content Include="Images\Test_Images\tag.png" />
+    <Content Include="Images\Test_Images\TheGlenrothes.jpg" />
     <Content Include="Images\Test_Images\whisky1.jpg" />
     <Content Include="Images\Test_Images\whiskyglass.jpg" />
     <Content Include="Images\Test_Images\whiskyglasses.jpg" />
