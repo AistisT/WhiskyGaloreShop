@@ -223,6 +223,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="bin\MySql.Data.dll" />
     <Content Include="Content\CSS\bootstrap.css" />
     <Content Include="Content\CSS\default.css" />
     <Content Include="Content\CSS\etalage.css" />
