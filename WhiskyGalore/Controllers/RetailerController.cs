@@ -37,7 +37,7 @@ namespace WhiskyGalore.Controllers
             {
                 return View(r);
             }
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("Index", "Checkout");
         }
 
 
